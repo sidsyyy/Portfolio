@@ -12,7 +12,7 @@ const About = () => {
 
     useEffect(() => {
         const query = '*[_type == "about"]';
-
+        
         (async ()=>{
             await client
             .fetch(query)

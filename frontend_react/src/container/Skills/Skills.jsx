@@ -16,7 +16,6 @@ const Skills = () => {
         client
             .fetch(query)
             .then((data) => {
-                console.log(data);
                 setExperiences(data);
             })
             .catch((err) => { console.log(err.message); });
@@ -42,12 +41,12 @@ const Skills = () => {
 
             <div className="app__skills-container">
                 <motion.div className="app__skills-list">
-                    {skills.map((skill) => (
+                    {skills.map((skill, idx) => (
                         <motion.div
                             whileInView={{ opacity: [0, 1] }}
                             transition={{ duration: 0.5 }}
                             className="app__skills-item app__flex"
-                            key={skill.name}
+                            key={idx}
                         >
                             <motion.div
                                 whileInView={{ scale: 1, opacity: 1 }}
@@ -63,16 +62,18 @@ const Skills = () => {
                     ))}
                 </motion.div>
                 <div className="app__skills-exp">
-                    {experiences.map((experience) => (
+                    {experiences.map((experience, idx) => (
                         <motion.div
                             className="app__skills-exp-item"
-                            key={experience.year}
+                            key={idx}
                         >
                             <div className="app__skills-exp-year">
                                 <p className="bold-text">{experience.year}</p>
                             </div>
-                            <motion.div className="app__skills-exp-works">
-                                {experience.works.map((work) => (
+                            <motion.div className="app__skills-exp-works"
+                                key={-idx-1}
+                                >
+                                {experience.works.map((work, idx) => (
                                     <>
                                         <motion.div
                                             whileInView={{ opacity: [0, 1] }}
@@ -80,7 +81,7 @@ const Skills = () => {
                                             className="app__skills-exp-work"
                                             data-tip
                                             data-for={work.name}
-                                            key={work.name}
+                                            key={-idx-1}
                                         >
                                             <h4 className="bold-text">{work.name}</h4>
                                             <p className="p-text">{work.company}</p>
@@ -90,6 +91,7 @@ const Skills = () => {
                                             effect="solid"
                                             arrowColor="#fff"
                                             className="skills-tooltip"
+                                            key={idx}
                                         >
                                             {work.desc}
                                         </ReactTooltip>

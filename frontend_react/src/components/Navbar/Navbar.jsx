@@ -1,12 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Navbar.scss';
 import { images } from '../../constants';
 import { HiMenuAlt4, HiMenu, HiX } from 'react-icons/hi'
 import { motion } from 'framer-motion';
+import { client } from '../../client';
 
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
+    const [url, setUrl] = useState();
+
+    async function getResumeURL() {
+        const query = `*[_type == 'resume'][0] {"firstAssetURL": resume.asset->url}`;
+
+        await client
+            .fetch(query)
+            .then((data)=> { 
+                setUrl(data.firstAssetURL);
+            })
+            .catch((err) => { console.log(err)});
+    }
+
+    useEffect(()=>{
+        getResumeURL();
+    }, [])
 
     return (
         <nav className='app__navbar'>
@@ -22,9 +39,7 @@ const Navbar = () => {
                         {
                             (item !== 'Resume') ?
                                 <a href={`#${item}`}>{item}</a> :
-                                <a href="https://drive.google.com/file/d/1qT31Ai8NSymHanZm8qM2SDJ00VXBwSqZ/view?usp=sharing"
-                                    target="_blank"
-                                    rel='noreferrer'>{item} ⬇</a>
+                                    <a href={url} target="_blank">{item} ⬇</a>
                         }
                     </li>
                 )
@@ -48,9 +63,7 @@ const Navbar = () => {
                                         (item !== 'Resume') ?
                                             < a href={`#${item}`} onClick={() => setToggle(false)}>
                                                 {item}
-                                            </a> : <a href="https://drive.google.com/file/d/1qT31Ai8NSymHanZm8qM2SDJ00VXBwSqZ/view?usp=sharing"
-                                                target="_blank"
-                                                rel='noreferrer'>{item}</a>
+                                            </a> : <a href={url} target="_blank">{item}</a>
                                     }
                                     </li>
                                 ))}
