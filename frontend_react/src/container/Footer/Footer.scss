@@ -1,0 +1,187 @@
+#contact {
+    position: relative;
+    background: var(--background-darken), url(../../assets/bg42.jpg);
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center;
+
+    .app__wrapper {
+        padding: 0;
+
+        .copyright {
+            display: none;
+        }
+    }
+}
+
+.app__footer {
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.app__footer-cards {
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 4em 2rem 2rem;
+    padding: 0 2rem 0 2rem;
+
+
+    .app__footer-card {
+        min-width: 290px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        margin: 1rem 0;
+        padding: 1rem;
+
+        border-radius: var(--border-radius);
+        border-style: var(--border-style);
+        border-color: var(--white-color);
+        border-width: var(--border-width);
+
+        cursor: pointer;
+
+        background: url(../../assets/bg39.jpg);
+        background-size: contain;
+        background-repeat: repeat;
+        background-position: center;
+
+
+        img {
+            width: 40px;
+            height: 40px;
+            margin: 0 0.7rem;
+        }
+
+        p {
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        &:hover {
+            box-shadow: var(--box-shadow-h);
+        }
+
+        @media screen and (max-width: 450px) {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+}
+
+// .app__footer-cards .app__footer-card:last-child {
+//     background-color: #000000;
+//     background: url(../../assets/BG21.jpg);
+//     background-size: cover;
+//     background-repeat: repeat;
+//     background-position: center;
+//     opacity: 0.9;
+// }
+
+// .app__footer-cards .app__footer-card:last-child:hover {
+//     box-shadow: 0 0 25px #f2f7fb;
+// }
+
+.app__footer-form {
+    width: 60%;
+    flex-direction: column;
+    margin: 1rem 2rem;
+    padding: 1rem 0 0 0;
+
+    border-style: var(--border-style);
+    border-radius: var(--border-radius);
+    border-color: var(--white-color);
+    border-width: var(--border-width);
+
+
+    box-shadow: var(--box-shadow);
+    background: url(../../assets/bg39.jpg);
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center;
+
+    &:hover {
+        box-shadow: var(--box-shadow-h);
+    }
+
+    div {
+        width: 90%;
+        margin: 0.75rem 2rem;
+        cursor: pointer;
+
+        transition: all 0.3s ease-in-out;
+
+        border-radius: var(--border-radius);
+        border-style: var(--border-style);
+        border-color: var(--white-color);
+        border-width: var(--border-width);
+
+        box-shadow: var(--box-shadow);
+        background: var(--box-background);
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.95rem;
+            border: none;
+            border-radius: 7px;
+            background: var(--box-background);
+            font-family: var(--font-base);
+            outline: none;
+        }
+
+        textarea {
+            resize: none;
+            height: 170px;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: var(--white-color);
+        }
+
+    }
+
+    button {
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        border: none;
+        background-color: var(--white-color);
+
+        font-weight: 500;
+        color: var(--black-color);
+        outline: none;
+        margin: 2rem 0 2rem 0;
+        font-family: var(--font-base);
+
+        transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--blue-color);
+            color: var(--white-color);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 90%;
+        margin: 1rem 0;
+    }
+}
