@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './About.scss';
 import { motion } from 'framer-motion';
-import { client, urlFor } from '../../client';
+import { client } from '../../client';
 import { AppWrap, MotionWrap } from '../../wrapper';
+import Card from './SubContainers/Card';
 
 
 
@@ -10,34 +11,23 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 const About = () => {
     const [abouts, setAbouts] = useState([]);
 
+
+    // Fetching data from backend.
     useEffect(() => {
         const query = '*[_type == "about"]';
 
         client
             .fetch(query)
-            .then((data) => { setAbouts(data) })
+            .then((data) => {
+                setAbouts(data.sort((a, b) => a.id - b.id));
+            })
             .catch((err) => { console.log(err.message) });
     }, []);
-
-    function dynamicSort(property) {
-        var sortOrder = 1;
-        if (property[0] === "-") {
-            sortOrder = -1;
-            property = property.substr(1);
-        }
-        return function (a, b) {
-            /* next line works with strings and numbers, 
-             * and you may want to customize it to your needs
-             */
-            var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
-            return result * sortOrder;
-        }
-    }
-
 
 
     return (
         <>
+            {/* Heading */}
             <motion.div className='app__header-text app__flex'
                 whileInView={{ scale: 1 }}
                 whileHover={{ scale: 1.1 }}
@@ -50,24 +40,9 @@ const About = () => {
                 </h2>
             </motion.div>
 
+            {/* About List Items Container */}
             <div className='app__profiles'>
-                {
-                    abouts.sort(dynamicSort("id")).map(
-                        (about, index) => (
-                            <motion.div
-                                whileInView={{ opacity: 1 }}
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ opacity: 0.75 }}
-                                className="app__profile-item"
-                                key={about.title + index}
-                            >
-                                <img src={urlFor(about.imgUrl)} alt={about.title} />
-                                <h2 className='bold-text' style={{ marginTop: 20 }}>{about.title}</h2>
-                                <p className='p-text' style={{ marginTop: 10 }}>{about.description}</p>
-                            </motion.div>
-                        )
-                    )
-                }
+                { abouts.map(item => (<Card key={item._id} item={item} />)) }
             </div>
         </>
     )
