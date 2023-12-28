@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Tooltip as ReactTooltip } from 'react-tooltip'
-import { AppWrap, MotionWrap } from '../../wrapper';
-import { urlFor, client } from '../../client';
 import './Skills.scss';
+import { motion } from 'framer-motion';
+import { AppWrap, MotionWrap } from '../../wrapper';
+import { client } from '../../client';
+import SkillCard from './SubContainers/SkillCard';
+import ExperienceYear from './SubContainers/ExperienceYearCard';
+
 
 const Skills = () => {
     const [experiences, setExperiences] = useState([]);
     const [skills, setSkills] = useState([]);
+
 
     useEffect(() => {
         const query = '*[_type == "experiences"]';
@@ -28,8 +31,10 @@ const Skills = () => {
             .catch((err) => { console.log(err.message); });
     }, []);
 
+
     return (
         <>
+            {/* Header */}
             <motion.div className='app__header-text app__flex'
                 whileInView={{ scale: 1 }}
                 whileHover={{ scale: 1.1 }}
@@ -39,67 +44,25 @@ const Skills = () => {
             </motion.div>
 
 
+
             <div className="app__skills-container">
+
+                {/* Skills */}
                 <motion.div className="app__skills-list">
+
                     {skills.map((skill, idx) => (
-                        <motion.div
-                            whileInView={{ opacity: [0, 1] }}
-                            transition={{ duration: 0.5 }}
-                            className="app__skills-item app__flex"
-                            key={idx}
-                        >
-                            <motion.div
-                                whileInView={{ scale: 1, opacity: 1 }}
-                                whileHover={{ opacity: 1.5 }}
-                                whileTap={{ opacity: 0.75 }}
-                                className="app__flex"
-                                style={{ backgroundColor: skill.bgColor }}
-                            >
-                                <img src={urlFor(skill.icon)} alt={skill.name} />
-                            </motion.div>
-                            <p className="p-text">{skill.name}</p>
-                        </motion.div>
+                        <SkillCard key={idx} item={skill} />
                     ))}
+
                 </motion.div>
+
+                {/* Work Experiences */}
                 <div className="app__skills-exp">
+
                     {experiences.map((experience, idx) => (
-                        <motion.div
-                            className="app__skills-exp-item"
-                            key={idx}
-                        >
-                            <div className="app__skills-exp-year">
-                                <p className="bold-text">{experience.year}</p>
-                            </div>
-                            <motion.div className="app__skills-exp-works"
-                                key={-idx-1}
-                                >
-                                {experience.works.map((work, idx) => (
-                                    <>
-                                        <motion.div
-                                            whileInView={{ opacity: [0, 1] }}
-                                            transition={{ duration: 0.5 }}
-                                            className="app__skills-exp-work"
-                                            data-tip
-                                            data-for={work.name}
-                                            key={-idx-1}
-                                        >
-                                            <h4 className="bold-text">{work.name}</h4>
-                                            <p className="p-text">{work.company}</p>
-                                        </motion.div>
-                                        <ReactTooltip
-                                            id={work.name}
-                                            effect="solid"
-                                            arrowColor="#fff"
-                                            className="skills-tooltip"
-                                            key={idx}
-                                        >
-                                            {work.desc}
-                                        </ReactTooltip>
-                                    </>
-                                ))}
-                            </motion.div>
-                        </motion.div>
+                        <ExperienceYear key={idx} item={experience}/>
                     ))}
+
                 </div>
             </div>
         </>
