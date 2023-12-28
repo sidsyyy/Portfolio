@@ -27,6 +27,7 @@ const Certificates = () => {
         client
             .fetch(query)
             .then((data) => {
+                console.log(data);
                 setCertificates(data);
                 setFilteredCertificate(data);
             })

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Certificates.scss';
 import { urlFor } from '../../../client';
+import moment from 'moment';
 
 
 function Card(props) {
@@ -13,7 +14,9 @@ function Card(props) {
 
                 <div>
                     <h4 className="bold-text">{props.items[props.id].by}</h4>
-                    <h5 className="p-text">Issue Date : {props.items[props.id].issueDate}</h5>
+                    <h5 className="p-text">
+                        Issue Date : {moment(props.items[props.id].issueDate, "YYYY-MM-DD").format("D MMM YYYY")}
+                        </h5>
                 </div>
 
             </div>
