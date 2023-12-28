@@ -86,24 +86,11 @@
     }
 }
 
-// .app__footer-cards .app__footer-card:last-child {
-//     background-color: #000000;
-//     background: url(../../assets/BG21.jpg);
-//     background-size: cover;
-//     background-repeat: repeat;
-//     background-position: center;
-//     opacity: 0.9;
-// }
-
-// .app__footer-cards .app__footer-card:last-child:hover {
-//     box-shadow: 0 0 25px #f2f7fb;
-// }
-
 .app__footer-form {
     width: 60%;
     flex-direction: column;
     margin: 1rem 2rem;
-    padding: 1rem 0 0 0;
+    padding: 1rem 0 1rem 0;
 
     border-style: var(--border-style);
     border-radius: var(--border-radius);
@@ -173,6 +160,10 @@
 
         transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
         cursor: pointer;
+
+        &:disabled {
+            opacity: 0.5;
+        }
 
         &:hover {
             background-color: var(--blue-color);
