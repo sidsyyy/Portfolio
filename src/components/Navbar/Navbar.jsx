@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Navbar.scss';
 import { images } from '../../constants';
-import { HiMenuAlt4, HiMenu, HiX } from 'react-icons/hi'
+import { HiMenu, HiX } from 'react-icons/hi'
 import { motion } from 'framer-motion';
 import { client } from '../../client';
 
@@ -39,7 +39,7 @@ const Navbar = () => {
                         {
                             (item !== 'Resume') ?
                                 <a href={`#${item}`}>{item}</a> :
-                                    <a href={url} target="_blank">{item} ⬇</a>
+                                    <a href={url} target="_blank" rel="noreferrer">{item} ⬇</a>
                         }
                     </li>
                 )
@@ -63,7 +63,7 @@ const Navbar = () => {
                                         (item !== 'Resume') ?
                                             < a href={`#${item}`} onClick={() => setToggle(false)}>
                                                 {item}
-                                            </a> : <a href={url} target="_blank">{item}</a>
+                                            </a> : <a href={url} target="_blank" rel="noreferrer">{item}</a>
                                     }
                                     </li>
                                 ))}

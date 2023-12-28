@@ -12,14 +12,12 @@ const About = () => {
 
     useEffect(() => {
         const query = '*[_type == "about"]';
-        
-        (async ()=>{
-            await client
+
+        client
             .fetch(query)
             .then((data) => { setAbouts(data) })
-            .catch((err) => { console.log(err.message)});
-        })();
-    }, [])
+            .catch((err) => { console.log(err.message) });
+    }, []);
 
     function dynamicSort(property) {
         var sortOrder = 1;
@@ -45,7 +43,11 @@ const About = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ opacity: 0.75 }}
             >
-                <h2 className='head-text'>Algorithm: <span>Word used by programmers</span><br /> when they don’t want to <span>explain what they did.</span></h2>
+                <h2 className='head-text'>
+                    Algorithm: <span>Word used by programmers</span>
+                    <br />
+                    when they don’t want to <span>explain what they did.</span>
+                </h2>
             </motion.div>
 
             <div className='app__profiles'>

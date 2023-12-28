@@ -31,6 +31,5 @@ export default createSchema({
     contact,
     certificates,
     resume,
-    /* Your types here! */
   ]),
 });

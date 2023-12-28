@@ -4,17 +4,15 @@ import {
   Header,
   Footer,
   Skills,
-  Testimonials,
   Work,
   Certificates,
 } from "./container";
-import { Navbar, Background } from "./components";
+import { Navbar } from "./components";
 import "./App.scss";
 
 const App = () => {
   return (
     <div className="app">
-      {/* <Background /> */}
       <Navbar />
       <Header />
       <About />
@@ -22,9 +20,9 @@ const App = () => {
       <Skills />
       <Certificates />
       <Footer />
-      {/* <Testimonials /> */}
     </div>
   );
 };
+
 
 export default App;

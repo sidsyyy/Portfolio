@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
+import './Certificates.scss';
 import { motion } from 'framer-motion';
 import { AppWrap, MotionWrap } from '../../wrapper';
-import { urlFor, client } from '../../client';
-import './Certificates.scss';
+import { client } from '../../client';
+import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
+import Labels from './SubContainers/Labels';
+import Card from './SubContainers/Card';
 
 const Certificates = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [certificates, setCertificates] = useState([]);
-    const [filterWork, setFilterWork] = useState([]);
-    const [activeFilter, setActiveFilter] = useState('All');
+    const [filteredCertificates, setFilteredCertificate] = useState([]);
+    const [activeTag, setActiveTag] = useState('All');
 
-    const handleClick = (index) => {
+
+    // Setting Current Index of item.
+    const handleClick = async (index) => {
         setCurrentIndex(index);
     };
 
+
+    // Fetching Result from the backend.
     useEffect(() => {
         const query = '*[_type == "certificates"]';
 
@@ -22,26 +28,28 @@ const Certificates = () => {
             .fetch(query)
             .then((data) => {
                 setCertificates(data);
-                setFilterWork(data);
+                setFilteredCertificate(data);
             })
             .catch((err) => { console.log(err.message); });
     }, []);
 
-    const handleWorkFilter = (item) => {
-        setActiveFilter(item);
 
-        setTimeout(() => {
+    // Filter Items Based on tag passed as an argument.
+    const handleFilter = async (tag) => {
+        setActiveTag(tag);
+        setCurrentIndex(0);
 
-            if (item === 'All') {
-                setFilterWork(certificates);
-            } else {
-                setFilterWork(certificates.filter((work) => work.tags.includes(item)));
-            }
-        }, 500);
+        if (tag === 'All') {
+            await setFilteredCertificate(certificates);
+        } else {
+            await setFilteredCertificate(certificates.filter((certificate) => certificate.tags.includes(tag)));
+        }
     };
+
 
     return (
         <>
+            {/* Heading */}
             <motion.div className='app__header-text app__flex'
                 whileInView={{ scale: 1 }}
                 whileHover={{ scale: 1.2 }}
@@ -50,39 +58,32 @@ const Certificates = () => {
                 <h2 className='head-text'>Certificates <span>&</span> Achievements</h2>
             </motion.div>
 
-            <div className="app__certificates-filter">
-                {["Unity", "Cyber Security", "Programming", "Internship", "Other", "All"].map((item, index) => (
-                    <div
-                        key={index}
-                        onClick={() => handleWorkFilter(item)}
-                        className={`app__certificates-filter-item app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
-                    >
-                        {item}
-                    </div>
-                ))}
-            </div>
+            {/* Filter Labels */}
+            <Labels
+                onClick={handleFilter}
+                activeTag={activeTag}
+            />
 
-            {filterWork.length && (
+            {/* Certificate Card and Buttons to Navigate them. */}
+            {filteredCertificates.length && (
                 <>
-                    <div className="app__certificates-item app__flex">
-                        <div className="app__certificates-content">
-                            <h2 >{filterWork[currentIndex].name}</h2>
-                            <div>
-                                <h4 className="bold-text">{filterWork[currentIndex].by}</h4>
-                                <h5 className="p-text">Issue Date : {filterWork[currentIndex].issueDate}</h5>
-                            </div>
-                        </div>
-                        <img src={urlFor(filterWork[currentIndex].imgurl)} alt={filterWork[currentIndex].name} />
-                    </div>
+                    {/* Certificate Card */}
+                    <Card
+                        id={currentIndex}
+                        items={filteredCertificates}
+                    />
 
+                    {/* Left Right Buttons */}
                     <div className="app__certificates-btns app__flex">
-                        <div className="app__flex" onClick={() => handleClick(currentIndex === 0 ? filterWork.length - 1 : currentIndex - 1)}>
+
+                        <div className="app__flex" onClick={() => handleClick(currentIndex === 0 ? filteredCertificates.length - 1 : currentIndex - 1)}>
                             <HiChevronLeft />
                         </div>
 
-                        <div className="app__flex" onClick={() => handleClick(currentIndex === filterWork.length - 1 ? 0 : currentIndex + 1)}>
+                        <div className="app__flex" onClick={() => handleClick(currentIndex === filteredCertificates.length - 1 ? 0 : currentIndex + 1)}>
                             <HiChevronRight />
                         </div>
+
                     </div>
                 </>
             )}
