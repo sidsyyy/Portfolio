@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap');
 
 :root {
-    --font-base: "DM Sans", sans-serif;
+    --font-base: 'M PLUS Rounded 1c', sans-serif;
     --transparent-color:rgba(0, 0, 0, 0);
     --primary-color: #edf2f8;
     --secondary-color: #dba334;
@@ -11,7 +11,7 @@
     --brown-color: #46364a;
     --white-color: #ffffff;
     --highlight-color: #ffffff;
-    --blue-color: #1071f1;
+    --blue-color: #38f1fe;
 
 
     --box-shadow:0 0 20px rgba(0, 0, 0, 0.25);
@@ -27,8 +27,6 @@
 }
 
 * {
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-
     box-sizing: border-box;
     padding: 0;
     margin: 0;

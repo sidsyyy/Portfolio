@@ -8,60 +8,41 @@ function ProjectCard(props) {
     return (
         <motion.div
             whileInView={{ opacity: 1 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ opacity: 0.75 }}
-            className="app__work-item app__flex"
+            className="app__card app__flex"
         >
+            <img onClick={()=> {
+                    if(props.item.codeLink) window.open(props.item.codeLink);
+                    else if(props.item.projectLink) window.open(props.item.projectLink);
+                }} 
+                src={urlFor(props.item.imgUrl)} 
+                alt={props.item.name} 
+                style={{cursor:'pointer'}}
+            />
 
-            <div
-                className="app__work-img app__flex"
+            <h2 className="bold-text head-text-decoration">{props.item.title}</h2>
+
+            {/* Project Links Both Live and Code. */}
+            <motion.div
+                className="app__work-hover app__flex"
             >
+                {/* Live Project Button */}
+                {props.item.projectLink && (
+                    <a href={props.item.projectLink} target="_blank" rel="noreferrer">
+                        <AiFillEye />
+                    </a>
+                )}
 
-                <img src={urlFor(props.item.imgUrl)} alt={props.item.name} />
+                {/* Project Code Button */}
+                {props.item.codeLink && (
+                    <a href={props.item.codeLink} target="_blank" rel="noreferrer">
+                        <AiFillGithub />
+                    </a>
+                )}
 
-                {/* Project Links Both Live and Code. */}
-                <motion.div
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
-                    className="app__work-hover app__flex"
-                >
-                    {/* Live Project Button */}
-                    {props.item.projectLink && (
-                        <a href={props.item.projectLink} target="_blank" rel="noreferrer">
-                            <motion.div
-                                whileInView={{ scale: [0, 1] }}
-                                whileHover={{ scale: [1, 0.90] }}
-                                transition={{ duration: 0.25 }}
-                                className="app__flex"
-                            >
-                                <AiFillEye />
-                            </motion.div>
-                        </a>
-                    )}
+            </motion.div>
 
-                    {/* Project Code Button */}
-                    {props.item.codeLink && (
-                        <a href={props.item.codeLink} target="_blank" rel="noreferrer">
-                            <motion.div
-                                whileInView={{ scale: [0, 1] }}
-                                whileHover={{ scale: [1, 0.90] }}
-                                transition={{ duration: 0.25 }}
-                                className="app__flex"
-                            >
-                                <AiFillGithub />
-                            </motion.div>
-                        </a>
-                    )}
-
-                </motion.div>
-
-            </div>
-
-            {/* Project Title and Description. */}
-            <div className="app__work-content app__flex">
-                <h4 className="bold-text">{props.item.title}</h4>
-                <p className="p-text" style={{ marginTop: 10 }}>{props.item.description}</p>
-            </div>
+            
+            <p className="p-text" style={{ marginTop: 10 }}>{props.item.description}</p>
 
         </motion.div>
     )
