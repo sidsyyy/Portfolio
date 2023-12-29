@@ -84,10 +84,10 @@
 }
 
 .bold-text {
-    font-size: 1rem;
-    font-weight: 800;
+    font-size: 1.1rem;
+    font-weight: bolder;
     color: var(--white-color);
-    text-align: left;
+    text-align: center;
 
     @media screen and (min-width: 2000px) {
         font-size: 2rem;
@@ -96,6 +96,12 @@
     @media screen and (max-width: 450px) {
         font-size: 0.9rem;
     }
+}
+
+.head-text-decoration {
+    text-decoration-color: var(--secondary-color);
+    text-decoration-line: overline;
+    text-decoration-thickness: from-font;
 }
 
 .app__social {
@@ -123,7 +129,7 @@
         svg {
             width: 25px;
             height: 25px;
-            margin-top:3px;
+            margin-top: 3px;
             color: var(--black-color);
         }
 
@@ -186,16 +192,17 @@
 
     margin: 5rem 3rem 0 3rem;
 
-    border-style: var(--border-style);
-    border-radius: var(--border-radius);
-    border-color: var(--white-color);
-    border-width: var(--border-width);
+    // border-style: var(--border-style);
+    // border-radius: var(--border-radius);
+    // border-color: var(--white-color);
+    // border-width: var(--border-width);
 
-    box-shadow: var(--box-shadow);
-    background: var(--box-background);
+    // box-shadow: var(--box-shadow);
+    // background: var(--box-background);
 
     h2 {
         text-transform: uppercase;
+        text-decoration: overline;
     }
 }
 
@@ -221,18 +228,68 @@
     border-radius: var(--border-radius) !important;
     border-color: var(--white-color) !important;
     border-width: var(--border-width);
-    border-style:groove !important;
+    border-style: groove !important;
 
     padding: 0.5rem !important;
     color: var(--white-color) !important;
     text-align: center !important;
     line-height: 1.5 !important;
-    opacity: 1 ;
+    opacity: 1;
 
 
     @media screen and (min-width: 2000px) {
         font-size: 1.75rem !important;
         max-width: 500px !important;
         line-height: 2 !important;
+    }
+}
+
+.app__card {
+    width: 280px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem;
+    padding: 0.5rem;
+
+    border-radius: var(--border-radius);
+
+    h2,
+    p {
+        padding: 0 1rem 0 1rem;
+    }
+
+    h2 {
+        color: var(--secondary-color);
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    img {
+        width: 90%;
+        height: 170px;
+        margin-top: 10px;
+
+        border: 4px var(--border-style) var(--secondary-color);
+        border-radius: var(--border-radius);
+        object-fit: cover;
+    }
+
+    &:hover {
+        box-shadow: var(--box-shadow);
+        background: var(--box-background);
+    }
+
+    @media screen and (min-width: 2000px) {
+        width: 370px;
+        margin: 2rem 4rem;
+
+        img {
+            height: 320px;
+        }
     }
 }
