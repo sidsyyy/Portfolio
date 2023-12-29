@@ -4,6 +4,7 @@ import { images } from '../../constants';
 import { HiMenu, HiX } from 'react-icons/hi'
 import { motion } from 'framer-motion';
 import { client } from '../../client';
+import { BsGithub, BsInstagram, BsLinkedin } from 'react-icons/bs';
 
 
 const Navbar = () => {
@@ -54,7 +55,7 @@ const Navbar = () => {
 
             <div className='app__navbar-menu'>
 
-             <a className='p-text' href={url} target="_blank" rel="noreferrer">Resume <span>⬇</span></a>
+                <a className='p-text' href={url} target="_blank" rel="noreferrer">Resume <span>⬇</span></a>
 
                 <HiMenu onClick={() => setToggle(true)} />
 
@@ -62,19 +63,44 @@ const Navbar = () => {
                     toggle && (
                         <motion.div
                             whileInView={{ x: [300, 0] }}
-                            transition={{ duration: 0.85, ease: 'easeOut' }}
+                            transition={{ duration: 0.25, ease: 'easeOut' }}
                         >
 
-                            <HiX onClick={() => setToggle(false)} />
+                            <motion.div
+                                whileInView={{ x: [300, 0] }}
+                                transition={{ duration: 0.25, ease: 'easeOut' }}
+                            >
+                                <a href="https://www.instagram.com/mathe_magician_/"
+                                    target="_blank"
+                                    rel='noreferrer'>
+                                    <BsInstagram />
+                                </a>
+
+                                <a href="https://github.com/Code-Magician"
+                                    target="_blank"
+                                    rel='noreferrer'>
+                                    <BsGithub />
+                                </a>
+
+                                <a href="https://www.linkedin.com/in/priyansh-singh-31a7391b4/"
+                                    target="_blank"
+                                    rel='noreferrer'>
+                                    <BsLinkedin />
+                                </a>
+
+                                <a href={''}> <HiX onClick={() => setToggle(false)} /></a>
+
+                            </motion.div>
+
 
                             <ul>
                                 {['home', 'about', 'work', 'skills', 'certificates', 'contact'].map(
                                     (item) => (
 
                                         <li key={item}>{
-                                                <a href={`#${item}`} onClick={() => setToggle(false)}>
-                                                    {item}
-                                                </a> 
+                                            <a href={`#${item}`} onClick={() => setToggle(false)}>
+                                                {item}
+                                            </a>
                                         }
                                         </li>
                                     ))}

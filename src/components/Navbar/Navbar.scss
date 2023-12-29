@@ -1,5 +1,3 @@
-
-
 a {
     font-size: medium;
     text-decoration: none;
@@ -19,7 +17,7 @@ a {
 
     padding: 1rem 2rem;
     background: rgba(0, 0, 0, 0.25);
-    
+
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -94,22 +92,18 @@ a {
 }
 
 .app__navbar-menu {
-    // width: 35px;
     height: 35px;
-    border-radius: 50%;
     position: relative;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:1rem;
-
-    background-color: var(--black-color);
+    gap: 1rem;
 
 
     svg {
-        width: 70%;
-        height: 70%;
+        width: 100%;
+        height: 100%;
         color: var(--white-color);
     }
 
@@ -122,13 +116,14 @@ a {
 
         padding: 1rem;
 
-        width: 70%;
+        width: 70vw;
         height: 100vh;
 
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
         flex-direction: column;
+        gap: 0;
 
         background: var(--background-darken), url(../../assets/bg39.jpg);
         background-size: cover;
@@ -137,18 +132,37 @@ a {
         /* top box shadow */
         box-shadow: 0px 0px 20px rgba(168, 168, 168, 0.15);
 
-        svg {
-            width: 35px;
-            height: 35px;
-            color: var(--white-color);
-            margin: 0.5rem 1rem;
+        div {
+            background: none;
+            box-shadow: none;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+
+            height: 20vh;
+
+            
+
+            a {
+                width: 35px;
+                height: 35px;
+                svg {
+                    width: 100%;
+                    height: 100%;
+                    color: var(--white-color);
+                    margin: 0.5rem 1rem;
+                }
+            }
         }
 
         ul {
             list-style: none;
             margin: 0;
             padding: 0;
-            height: 100%;
+            height: 80%;
             width: 100%;
 
             display: flex;
@@ -173,6 +187,12 @@ a {
                     }
                 }
             }
+        }
+
+
+        @media screen and (max-width: 450px) {
+            gap:1rem;
+            width: 100%;
         }
 
         @media screen and (min-width: 1000px) {
