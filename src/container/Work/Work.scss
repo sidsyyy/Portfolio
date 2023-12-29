@@ -23,20 +23,14 @@
 .app__work-filter {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 
     margin: 2rem 2rem 2rem 2rem;
     padding: 0.5rem 2rem 0.5rem 2rem;
 
-    border-radius: var(--border-radius);
-    border-style: var(--border-style);
-    border-color: var(--white-color);
-    border-width: var(--border-width);
-
     box-shadow: var(--box-shadow);
-    background: var(--box-background);
 
     .app__work-filter-item {
         text-transform: uppercase;
@@ -45,7 +39,7 @@
         border-radius: 0.5rem;
 
         border-radius: 10px;
-        background: rgba(255, 255, 255, 0.75);
+        background: var(--white-color);
 
         color: var(--black-color);
         font-weight: 800;
@@ -55,8 +49,7 @@
         margin: 0.5rem;
 
         &:hover {
-            background-color: var(--blue-color);
-            color: #fff;
+            background-color: var(--secondary-color);
         }
 
         @media screen and (min-width: 2000px) {
@@ -67,7 +60,7 @@
 
     .item-active {
         background-color: var(--blue-color);
-        color: #fff;
+        color: var(--dark-blue-color);
     }
 }
 

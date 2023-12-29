@@ -1,13 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { urlFor } from '../../../client';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 
 
 function ProjectCard(props) {
     return (
-        <motion.div
-            whileInView={{ opacity: 1 }}
+        <div
             className="app__card app__flex"
         >
             <img onClick={()=> {
@@ -22,7 +20,7 @@ function ProjectCard(props) {
             <h2 className="bold-text head-text-decoration">{props.item.title}</h2>
 
             {/* Project Links Both Live and Code. */}
-            <motion.div
+            <div
                 className="app__work-hover app__flex"
             >
                 {/* Live Project Button */}
@@ -39,12 +37,12 @@ function ProjectCard(props) {
                     </a>
                 )}
 
-            </motion.div>
+            </div>
 
             
             <p className="p-text" style={{ marginTop: 10 }}>{props.item.description}</p>
 
-        </motion.div>
+        </div>
     )
 }
 
