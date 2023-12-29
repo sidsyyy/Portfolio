@@ -251,7 +251,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    margin: 2rem;
+    margin: 3rem;
     padding: 0.5rem;
 
     border-radius: var(--border-radius);
@@ -262,6 +262,7 @@
     }
 
     h2 {
+        margin-top:20px;
         color: var(--secondary-color);
     }
 
@@ -276,7 +277,7 @@
 
         border: 4px var(--border-style) var(--secondary-color);
         border-radius: var(--border-radius);
-        object-fit: cover;
+        object-fit: fill;
     }
 
     &:hover {
