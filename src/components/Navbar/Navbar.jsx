@@ -63,12 +63,12 @@ const Navbar = () => {
                     toggle && (
                         <motion.div
                             whileInView={{ x: [300, 0] }}
-                            transition={{ duration: 0.25, ease: 'easeOut' }}
+                            transition={{ duration: 0.85, ease: 'easeOut' }}
                         >
 
                             <motion.div
                                 whileInView={{ x: [300, 0] }}
-                                transition={{ duration: 0.25, ease: 'easeOut' }}
+                                transition={{ duration: 1, ease: 'easeOut' }}
                             >
                                 <a href="https://www.instagram.com/mathe_magician_/"
                                     target="_blank"
@@ -88,7 +88,9 @@ const Navbar = () => {
                                     <BsLinkedin />
                                 </a>
 
-                                <a href={''}> <HiX onClick={() => setToggle(false)} /></a>
+                                <a href="" onClick={(e) => { e.preventDefault(); setToggle(false); }}>
+                                    <HiX />
+                                </a>
 
                             </motion.div>
 
