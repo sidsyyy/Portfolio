@@ -54,6 +54,8 @@ const Navbar = () => {
 
             <div className='app__navbar-menu'>
 
+             <a className='p-text' href={url} target="_blank" rel="noreferrer">Resume <span>⬇</span></a>
+
                 <HiMenu onClick={() => setToggle(true)} />
 
                 {
@@ -66,14 +68,13 @@ const Navbar = () => {
                             <HiX onClick={() => setToggle(false)} />
 
                             <ul>
-                                {['home', 'about', 'work', 'skills', 'certificates', 'contact', 'Resume'].map(
+                                {['home', 'about', 'work', 'skills', 'certificates', 'contact'].map(
                                     (item) => (
 
                                         <li key={item}>{
-                                            (item !== 'Resume') ?
                                                 <a href={`#${item}`} onClick={() => setToggle(false)}>
                                                     {item}
-                                                </a> : <a href={url} target="_blank" rel="noreferrer">{item} <span>⬇</span></a>
+                                                </a> 
                                         }
                                         </li>
                                     ))}
