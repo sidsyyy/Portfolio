@@ -22,7 +22,7 @@ function WorkCard(props) {
                 id={props.item._key}
                 effect="solid"
                 arrowColor="#fff"
-                className="skills-tooltip"
+                className="app__tooltip"
                 float={true}
             >
                 {props.item.desc}

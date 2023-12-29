@@ -210,3 +210,29 @@
         padding: 2rem;
     }
 }
+
+
+.app__tooltip {
+    max-width: 300px !important;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+
+    box-shadow: var(--box-shadow) !important;
+
+    border-radius: var(--border-radius) !important;
+    border-color: var(--white-color) !important;
+    border-width: var(--border-width);
+    border-style:groove !important;
+
+    padding: 0.5rem !important;
+    color: var(--white-color) !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
+    opacity: 1 ;
+
+
+    @media screen and (min-width: 2000px) {
+        font-size: 1.75rem !important;
+        max-width: 500px !important;
+        line-height: 2 !important;
+    }
+}

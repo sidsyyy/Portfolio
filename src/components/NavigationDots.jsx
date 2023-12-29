@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion';
 
 const NavigationDots = ({ active }) => {
     return (
@@ -6,12 +7,18 @@ const NavigationDots = ({ active }) => {
 
             {['home', 'about', 'work', 'skills', 'certificates', 'contact'].map(
                 (item, index) => (
-                    <div
-                        key={item + index}
-                        onClick={() => {window.open(`#${item}`, '_self')}}
-                        className="app__navigation-dot"
-                        style={active === item ? { backgroundColor: '#313BAC' } : {}}
-                    />
+                    <>
+                        <motion.div
+                            key={item + index}
+
+                            whileInView={{ scale: 1.5 }}
+                            whileHover={{ scale: 2.5 }}
+
+                            onClick={() => { window.open(`#${item}`, '_self') }}
+                            className="app__navigation-dot"
+                            style={active === item ? { backgroundColor: '#313BAC' } : {}}
+                        />
+                    </>
                 )
             )}
         </div>
