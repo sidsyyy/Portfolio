@@ -50,7 +50,7 @@ a {
     list-style: none;
 
     li {
-        margin: 0 2rem;
+        margin: 0 1rem;
         cursor: pointer;
 
         flex-direction: column;
@@ -86,7 +86,7 @@ a {
         }
     }
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 1000px) {
         display: none;
     }
 }
@@ -171,12 +171,12 @@ a {
             }
         }
 
-        @media screen and (min-width: 900px) {
+        @media screen and (min-width: 1000px) {
             display: none;
         }
     }
 
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: 1000px) {
         display: none;
     }
 }
