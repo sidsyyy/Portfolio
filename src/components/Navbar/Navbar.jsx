@@ -10,19 +10,19 @@ const Navbar = () => {
     const [toggle, setToggle] = useState(false);
     const [url, setUrl] = useState();
 
-    
+
     async function getResumeURL() {
         const query = `*[_type == 'resume'][0] {"firstAssetURL": resume.asset->url}`;
 
         await client
             .fetch(query)
-            .then((data)=> { 
+            .then((data) => {
                 setUrl(data.firstAssetURL);
             })
-            .catch((err) => { console.log(err)});
+            .catch((err) => { console.log(err) });
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getResumeURL();
     }, [])
 
@@ -32,28 +32,30 @@ const Navbar = () => {
         <nav className='app__navbar'>
 
             <div className='app__navbar-logo'>
-                <img src={images.logo} alt="logo" />
+                <a href='#home' >
+                    <img src={images.logo} alt="logo" />
+                </a>
             </div>
 
             <ul className='app__navbar-links'>
                 {['home', 'about', 'work', 'skills', 'certificates', 'contact', 'Resume'].map(
                     (item) => (
-                    <li key={`link-${item}`} className='app__flex p-text'>
-                        <div />
-                        {
-                            (item !== 'Resume') ?
-                                <a href={`#${item}`}>{item}</a> :
+                        <li key={`link-${item}`} className='app__flex p-text'>
+                            <div />
+                            {
+                                (item !== 'Resume') ?
+                                    <a href={`#${item}`}>{item}</a> :
                                     <a href={url} target="_blank" rel="noreferrer">{item} <span>⬇</span></a>
-                        }
-                    </li>
-                )
+                            }
+                        </li>
+                    )
                 )}
             </ul>
 
             <div className='app__navbar-menu'>
 
                 <HiMenu onClick={() => setToggle(true)} />
-                
+
                 {
                     toggle && (
                         <motion.div
@@ -67,14 +69,14 @@ const Navbar = () => {
                                 {['home', 'about', 'work', 'skills', 'certificates', 'contact', 'Resume'].map(
                                     (item) => (
 
-                                    <li key={item}>{
-                                        (item !== 'Resume') ?
-                                            <a href={`#${item}`} onClick={() => setToggle(false)}>
-                                                {item}
-                                            </a> : <a href={url} target="_blank" rel="noreferrer">{item} <span>⬇</span></a>
-                                    }
-                                    </li>
-                                ))}
+                                        <li key={item}>{
+                                            (item !== 'Resume') ?
+                                                <a href={`#${item}`} onClick={() => setToggle(false)}>
+                                                    {item}
+                                                </a> : <a href={url} target="_blank" rel="noreferrer">{item} <span>⬇</span></a>
+                                        }
+                                        </li>
+                                    ))}
                             </ul>
 
                         </motion.div>
