@@ -60,53 +60,63 @@ const Navbar = () => {
                 <HiMenu onClick={() => setToggle(true)} />
 
                 {
-                    toggle && (
+                    (
                         <motion.div
-                            whileInView={{ x: [300, 0] }}
+                            style={{ zIndex: (toggle ? 20 : -20) }}
+                            whileInView={{ opacity: (toggle ? [0, 1] : [1, 0]) }}
                             transition={{ duration: 0.85, ease: 'easeOut' }}
                         >
 
                             <motion.div
-                                whileInView={{ x: [300, 0] }}
+                                whileInView={{ opacity: (toggle ? [0, 1] : 0) }}
                                 transition={{ duration: 1, ease: 'easeOut' }}
                             >
-                                <a href="https://www.instagram.com/mathe_magician_/"
-                                    target="_blank"
-                                    rel='noreferrer'>
-                                    <BsInstagram />
-                                </a>
+                                {toggle && (
+                                    <>
+                                        <a href="https://www.instagram.com/mathe_magician_/"
+                                            target="_blank"
+                                            rel='noreferrer'>
+                                            <BsInstagram />
+                                        </a>
 
-                                <a href="https://github.com/Code-Magician"
-                                    target="_blank"
-                                    rel='noreferrer'>
-                                    <BsGithub />
-                                </a>
+                                        <a href="https://github.com/Code-Magician"
+                                            target="_blank"
+                                            rel='noreferrer'>
+                                            <BsGithub />
+                                        </a>
 
-                                <a href="https://www.linkedin.com/in/priyansh-singh-31a7391b4/"
-                                    target="_blank"
-                                    rel='noreferrer'>
-                                    <BsLinkedin />
-                                </a>
+                                        <a href="https://www.linkedin.com/in/priyansh-singh-31a7391b4/"
+                                            target="_blank"
+                                            rel='noreferrer'>
+                                            <BsLinkedin />
+                                        </a>
 
-                                <a href="" onClick={(e) => { e.preventDefault(); setToggle(false); }}>
-                                    <HiX />
-                                </a>
+                                        <a href="" onClick={(e) => { e.preventDefault(); setToggle(false); }}>
+                                            <HiX />
+                                        </a>
+                                    </>
+                                )}
 
                             </motion.div>
 
 
-                            <ul>
-                                {['home', 'about', 'work', 'skills', 'certificates', 'contact'].map(
-                                    (item) => (
+                            <motion.ul
+                                whileInView={{ opacity: (toggle ? [0, 1] : 0) }}
+                                transition={{ duration: 1, ease: 'easeOut' }}
+                            >
+                                {toggle &&
+                                    ['home', 'about', 'work', 'skills', 'certificates', 'contact'].map(
+                                        (item) => (
 
-                                        <li key={item}>{
-                                            <a href={`#${item}`} onClick={() => setToggle(false)}>
-                                                {item}
-                                            </a>
-                                        }
-                                        </li>
-                                    ))}
-                            </ul>
+                                            <li key={item}>{
+                                                <a href={`#${item}`} onClick={() => setToggle(false)}>
+                                                    {item}
+                                                </a>
+                                            }
+                                            </li>
+                                        )
+                                    )}
+                            </motion.ul>
 
                         </motion.div>
                     )
