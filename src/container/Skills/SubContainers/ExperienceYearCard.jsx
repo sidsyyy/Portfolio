@@ -6,7 +6,8 @@ import WorkCard from "./WorkCard";
 function ExperienceYear(props) {
     return (
         <motion.div
-            className="app__skills-exp-item"
+            className="app__skills-exp-item curvy-border"
+            style={{borderColor:'var(--white-color)'}}
         >
             <div className="app__skills-exp-year">
                 <p className="bold-text">{props.item.year}</p>

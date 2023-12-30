@@ -21,6 +21,7 @@ function WorkCard(props) {
                 <p className='p-text-small'>
                     {moment(props.item.fromDate).format("MMMM YYYY")} - {(props.item.isWorking)?"Working" : moment(props.item.toDate).format("MMMM YYYY")}
                 </p>
+                <p className='p-text-small'>{props.item.location}</p>
             </motion.div>
 
             <ReactTooltip

@@ -28,13 +28,11 @@ const About = () => {
     return (
         <>
             {/* Heading */}
-            <motion.div className='app__header-text app__flex'
-                whileInView={{ scale: 1 }}
-            >
+            <div className='app__header-text app__flex'>
                 <h2 className='head-text'>
                     Know a <span>Little bit</span> about me
                 </h2>
-            </motion.div>
+            </div>
 
             {/* About List Items Container */}
             <div className='app__profiles'>

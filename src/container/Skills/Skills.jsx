@@ -35,13 +35,9 @@ const Skills = () => {
     return (
         <>
             {/* Header */}
-            <motion.div className='app__header-text app__flex'
-                whileInView={{ scale: 1 }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ opacity: 0.75 }}
-            >
+            <div className='app__header-text app__flex'>
                 <h2 className="head-text">Skills <span>&</span> Experiences</h2>
-            </motion.div>
+            </div>
 
 
 
@@ -59,9 +55,11 @@ const Skills = () => {
                 {/* Work Experiences */}
                 <div className="app__skills-exp">
 
-                    {experiences.reverse().map((experience, idx) => (
-                        <ExperienceYear key={idx} item={experience}/>
-                    ))}
+                    {experiences
+                        .sort((a, b) => parseInt(b.year) - parseInt(a.year))
+                        .map((experience, idx) => (
+                            <ExperienceYear key={idx} item={experience} />
+                        ))}
 
                 </div>
             </div>
