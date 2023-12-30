@@ -50,13 +50,9 @@ const Certificates = () => {
     return (
         <>
             {/* Heading */}
-            <motion.div className='app__header-text app__flex'
-                whileInView={{ scale: 1 }}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ opacity: 0.75 }}
-            >
+            <div className='app__header-text app__flex'>
                 <h2 className='head-text'>Certificates <span>&</span> Achievements</h2>
-            </motion.div>
+            </div>
 
             {/* Filter Labels */}
             <Labels
