@@ -3,7 +3,7 @@ import React from 'react';
 
 function Labels(props) {
     return (
-        <div className="app__work-filter">
+        <div className="app__work-filter curvy-border">
             {['Unity', 'Flutter', 'React', 'Other', 'All'].map((tag, index) => (
                 <div
                     key={index}

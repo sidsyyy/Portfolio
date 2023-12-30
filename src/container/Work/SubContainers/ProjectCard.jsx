@@ -6,7 +6,7 @@ import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 function ProjectCard(props) {
     return (
         <div
-            className="app__card app__flex"
+            className="app__card app__flex curvy-border"
         >
             <img onClick={()=> {
                     if(props.item.codeLink) window.open(props.item.codeLink);

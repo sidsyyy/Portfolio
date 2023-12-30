@@ -18,6 +18,17 @@ const Header = () => {
         }
     };
 
+    const dragVariant = {
+        dragElastic: 1,
+        dragConstraints: {
+            top: -25,
+            left: -25,
+            right: 25,
+            bottom: 25,
+        },
+        dragSnapToOrigin: true
+    }
+
 
     return (
         <div className='app__header app__flex'>
@@ -31,10 +42,15 @@ const Header = () => {
 
                 <div className='app__header-badge'>
 
-                    <motion.div className='badge-cmp app__flex'
+                    <motion.div className='badge-cmp app__flex curvy-border'
                         whileInView={{ scale: 1, opacity: 1 }}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ opacity: 0.75 }}
+
+                        drag
+                        dragElastic={dragVariant.dragElastic}
+                        dragConstraints={dragVariant.dragConstraints}
+                        dragSnapToOrigin={dragVariant.dragSnapToOrigin}
                     >
 
                         <span>👋</span>
@@ -48,10 +64,16 @@ const Header = () => {
 
                     </motion.div>
 
-                    <motion.div className='tag-cmp app__flex '
+                    <motion.div className='tag-cmp app__flex curvy-border'
                         whileInView={{ scale: 1, opacity: 1 }}
                         whileHover={{ scale: 1.1 }}
-                        whileTap={{ opacity: 0.75 }}>
+                        whileTap={{ opacity: 0.75 }}
+
+                        drag
+                        dragElastic={dragVariant.dragElastic}
+                        dragConstraints={dragVariant.dragConstraints}
+                        dragSnapToOrigin={dragVariant.dragSnapToOrigin}
+                    >
 
                         <p className='p-text'>I do Competitive Programming</p>
                         <p className='p-text'>and Develop</p>
@@ -66,9 +88,10 @@ const Header = () => {
 
             {/* Avatar and Background of Avatar */}
             <motion.div
+                style={{ zIndex: -1 }}
                 whileInView={{ opacity: [0, 1] }}
                 transition={{ duration: 1, delayChildren: 1 }}
-                className="app__header-img"
+                className="app__header-img make-unselectable"
             >
 
                 <img src={images.profile} alt="profile_bg" />
@@ -93,17 +116,23 @@ const Header = () => {
             >
 
                 {[images.flutter, images.Unity, images.react].map(
-                    (circle, index) => (
+                    (logo, index) => (
 
                         <motion.div
                             whileInView={{ scale: 1, opacity: 1 }}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ opacity: 0.75 }}
+
+                            drag
+                            dragElastic={dragVariant.dragElastic}
+                            dragConstraints={dragVariant.dragConstraints}
+                            dragSnapToOrigin={dragVariant.dragSnapToOrigin}
+
                             className='circle-cmp app__flex'
                             key={`circle-${index}`}
                         >
 
-                            <img src={circle} alt="circle" />
+                            <img draggable={false} src={logo} alt="circle" />
 
                         </motion.div>
                     )

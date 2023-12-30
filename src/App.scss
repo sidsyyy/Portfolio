@@ -253,8 +253,7 @@
     flex-direction: column;
     margin: 2rem;
     padding: 0.5rem;
-
-    border-radius: var(--border-radius);
+    
 
     h2,
     p {
@@ -293,4 +292,19 @@
             height: 320px;
         }
     }
+}
+
+
+.curvy-border {
+    border:solid 5px var(--black-color);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.make-unselectable {
+    -webkit-user-drag: none;
+    user-drag: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

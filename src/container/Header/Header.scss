@@ -1,5 +1,7 @@
 #home {
+    position:-webkit-sticky;
     position: sticky;
+
     background: var(--background-darken), url(../../assets/Background.png);
     background-size: cover;
     background-repeat: repeat;
@@ -65,16 +67,14 @@
 
         margin-top: 5rem;
 
-        border-radius: var(--border-radius);
-        border-style: solid;
         border-color: var(--white-color);
-        border-width: 2px;
 
         box-shadow: var(--box-shadow);
         background: var(--box-background);
 
         &:hover {
-            box-shadow: var(--box-shadow-h);
+            border-color: var(--black-color);
+            box-shadow: #046A38 0px 0px 0px 6px,rgb(255, 255, 255) 0px 0px 0px 9px,  #FF671F 0px 0px 0px 15px;
         }
     }
 
@@ -107,6 +107,7 @@
 }
 
 
+
 .app__header-circles {
     flex: 0.75;
     display: flex;
@@ -119,18 +120,20 @@
     div {
         width: 100px;
         height: 100px;
-        border-radius: 50%;
-
+        
         background: var(--white-color);
         box-shadow: var(--box-shadow);
+        
+        border-radius: 50%;
+
+        &:hover{
+            box-shadow: var(--box-shadow-h);
+        }
+        
 
         img {
             width: 60%;
             height: 60%;
-        }
-
-        &:hover {
-            box-shadow: var(--box-shadow-h);
         }
     }
 
@@ -150,11 +153,6 @@
         height: 100px;
     }
 
-    // div:nth-child(4) {
-    //     width: 70px;
-    //     height: 70px;
-    // }
-
     @media screen and (min-width: 2000px) {
         div:nth-child(1) {
             width: 400px;
@@ -171,12 +169,6 @@
             width: 200px;
             height: 200px;
         }
-
-        // div:nth-child(4) {
-
-        //     width: 180px;
-        //     height: 180px;
-        // }
     }
 
     @media screen and (max-width: 1200px) {

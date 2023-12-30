@@ -7,7 +7,7 @@ function Card(props) {
     return (
         <motion.div
             whileInView={{ opacity: 1 }}
-            className="app__card"
+            className="app__card curvy-border"
         >
             <img src={urlFor(props.item.imgUrl)} alt={props.item.title} />
 
