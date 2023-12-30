@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Tooltip as ReactTooltip } from 'react-tooltip'
+import moment from 'moment';
 
 
 function WorkCard(props) {
-    console.log(props.item);
+    // const date = ;
+    console.log(props);
 
     return (
         <>
@@ -16,6 +18,9 @@ function WorkCard(props) {
             >
                 <h4 className="bold-text">{props.item.name}</h4>
                 <p className="p-text">{props.item.company}</p>
+                <p className='p-text-small'>
+                    {moment(props.item.fromDate).format("MMMM YYYY")} - {(props.item.isWorking)?"Working" : moment(props.item.toDate).format("MMMM YYYY")}
+                </p>
             </motion.div>
 
             <ReactTooltip
@@ -25,7 +30,7 @@ function WorkCard(props) {
                 className="app__tooltip"
                 float={true}
             >
-                {props.item.desc}
+                {(props.item.desc)}
             </ReactTooltip>
         </>
     )

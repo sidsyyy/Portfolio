@@ -59,7 +59,7 @@ const Skills = () => {
                 {/* Work Experiences */}
                 <div className="app__skills-exp">
 
-                    {experiences.map((experience, idx) => (
+                    {experiences.reverse().map((experience, idx) => (
                         <ExperienceYear key={idx} item={experience}/>
                     ))}
 

@@ -83,6 +83,18 @@
     }
 }
 
+.p-text-small {
+    font-size: 0.65rem;
+    text-align: left;
+    color: var(--blue-color);
+
+    line-height: 1.5;
+
+    @media screen and (min-width: 2000px) {
+        font-size: 1.6rem;
+    }
+}
+
 .bold-text {
     font-size: 1.1rem;
     font-weight: bolder;

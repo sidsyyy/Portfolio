@@ -7,7 +7,6 @@ import works from "./works";
 import abouts from "./abouts";
 import experiences from "./experiences";
 import skills from "./skills";
-import workExperience from "./workExperience";
 import contact from "./contact";
 import certificates from "./certificates";
 import resume from "./resume";
@@ -22,7 +21,6 @@ export default createSchema({
     works,
     abouts,
     skills,
-    workExperience,
     experiences,
     contact,
     certificates,
