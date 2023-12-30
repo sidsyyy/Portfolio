@@ -25,7 +25,7 @@ const NavigationDots = ({ active }) => {
 
                             onClick={() => { window.open(`#${item}`, '_self') }}
                             className="app__navigation-dot"
-                            style={{ backgroundColor: '#313BAC' }}
+                            style={{ backgroundColor: 'var(--secondary-color)' }}
                         />) :
                         (<motion.div
                             key={item + index}

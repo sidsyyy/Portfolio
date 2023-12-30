@@ -12,6 +12,7 @@ function WorkCard(props) {
         <>
             <motion.div
                 data-tooltip-id={props.item._key}
+
                 whileInView={{ opacity: [0, 1] }}
                 transition={{ duration: 0.5 }}
                 className="app__skills-exp-work"
@@ -30,6 +31,7 @@ function WorkCard(props) {
                 arrowColor="#fff"
                 className="app__tooltip"
                 float={true}
+                delayHide={500}
             >
                 {(props.item.desc)}
             </ReactTooltip>
