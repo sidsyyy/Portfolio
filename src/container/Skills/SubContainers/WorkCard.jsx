@@ -5,8 +5,6 @@ import moment from 'moment';
 
 
 function WorkCard(props) {
-    // const date = ;
-    console.log(props);
 
     return (
         <>
@@ -31,7 +29,6 @@ function WorkCard(props) {
                 arrowColor="#fff"
                 className="app__tooltip"
                 float={true}
-                delayHide={500}
             >
                 {(props.item.desc)}
             </ReactTooltip>

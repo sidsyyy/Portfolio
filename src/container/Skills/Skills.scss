@@ -125,12 +125,7 @@
 
     padding: 1rem;
 
-    border-radius: var(--border-radius);
-    border-style: var(--border-style);
-    border-color: var(--white-color);
-    border-width: var(--border-width);
-
-    box-shadow: var(--box-shadow);
+    border-color: var(--lightGray-color) !important;
 
     &:hover {
         background: var(--background-darken);

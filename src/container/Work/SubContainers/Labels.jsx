@@ -8,7 +8,7 @@ function Labels(props) {
                 <div
                     key={index}
                     onClick={() => props.onClick(tag)}
-                    className={`app__work-filter-item app__flex p-text ${props.tag === tag ? 'item-active' : ''}`}
+                    className={`app__work-filter-item app__flex curvy-border p-text ${props.tag === tag ? 'item-active' : ''}`}
                 >
                     {tag}
                 </div>
