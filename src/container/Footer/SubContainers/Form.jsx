@@ -41,25 +41,32 @@ function Form() {
 
                 <div className="app__footer-form app__flex curvy-border">
                     <div className="app__flex curvy-border">
-                        <input className="p-text curvy-border"
+                        <input 
+                            autoComplete='none'
+                            className="p-text curvy-border"
                             type="text"
                             placeholder="Your Name"
                             name="name"
                             value={formData.name}
-                            onChange={handleChangeInput} />
+                            onChange={handleChangeInput} 
+                        />
                     </div>
 
                     <div className="app__flex curvy-border">
-                        <input className="p-text curvy-border"
+                        <input 
+                            autoComplete='none'
+                            className="p-text curvy-border"
                             type="email"
                             placeholder="Your Email"
                             name="email"
                             value={formData.email}
-                            onChange={handleChangeInput} />
+                            onChange={handleChangeInput} 
+                        />
                     </div>
 
                     <div className='app__flex curvy-border'>
                         <textarea
+                            autoComplete='none'
                             className="p-text curvy-border"
                             placeholder="Your Message..."
                             value={formData.message}

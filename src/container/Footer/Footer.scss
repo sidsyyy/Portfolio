@@ -100,17 +100,19 @@
         transition: all 0.3s ease-in-out;
 
         box-shadow: var(--box-shadow);
-        background: var(--background-darken);
-        border-color: var(--lightGray-color) !important;
+        background: transparent;
+        border-color: var(--secondary-color) !important;
 
         input,
         textarea {
             width: 100%;
             padding: 0.95rem;
 
-            color:var(--black-color);
+            color:var(--white-color);
 
-            background: var(--white-color);
+            background: transparent;
+            border-color: transparent;
+
             font-family: var(--font-base);
             outline: none;
         }
@@ -118,13 +120,23 @@
         textarea {
             resize: none;
             height: 170px;
+            
         }
 
         input::placeholder,
         textarea::placeholder {
-            color: var(--black-color);
+            color: var(--lightGray-color);
+            opacity: 0.75;
         }
 
+        input:-webkit-autofill,
+        input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill {
+    background-color: transparent !important;
+    border-color:transparent !important;
+}
     }
 
     button {
