@@ -51,17 +51,17 @@
 
 .app__skills-item {
     flex-direction: column;
-    text-align: center;
     width: 75px;
 
     margin: 1rem;
-    transition: all 0.3s ease-in-out;
+    // transition: all 0.3s ease-in-out;
 
     div {
         width: 75px;
         height: 75px;
         border-radius: 50%;
-        // background-color: var(--black-color);
+
+        background-color: var(--white-color);
 
         img {
             width: 75%;
@@ -86,6 +86,8 @@
     p {
         font-weight: 800;
         margin-top: 0.5rem;
+        text-align: center;
+        text-transform: uppercase;
     }
 
     @media screen and (min-width: 2000px) {
@@ -129,6 +131,10 @@
     border-width: var(--border-width);
 
     box-shadow: var(--box-shadow);
+
+    &:hover {
+        background: var(--background-darken);
+    }
 }
 
 .app__skills-exp-works {
@@ -143,8 +149,15 @@
 
         cursor: pointer;
 
+        h4, p{
+            text-align: left;
+            text-transform: capitalize;
+        }
+
         h4 {
             font-weight: 800;
+            text-decoration: overline;
+            text-decoration-color: var(--secondary-color);
         }
 
         p {
