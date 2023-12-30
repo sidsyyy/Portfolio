@@ -45,7 +45,7 @@ const Header = () => {
                     <motion.div className='badge-cmp app__flex curvy-border'
                         whileInView={{ scale: 1, opacity: 1 }}
                         whileHover={{ scale: 1.1 }}
-                        whileTap={{ opacity: 0.75 }}
+                        whileTap={{ scale:0.9, opacity: 0.75 }}
 
                         drag
                         dragElastic={dragVariant.dragElastic}
@@ -67,7 +67,7 @@ const Header = () => {
                     <motion.div className='tag-cmp app__flex curvy-border'
                         whileInView={{ scale: 1, opacity: 1 }}
                         whileHover={{ scale: 1.1 }}
-                        whileTap={{ opacity: 0.75 }}
+                        whileTap={{scale:0.9, opacity: 0.75 }}
 
                         drag
                         dragElastic={dragVariant.dragElastic}
@@ -121,7 +121,7 @@ const Header = () => {
                         <motion.div
                             whileInView={{ scale: 1, opacity: 1 }}
                             whileHover={{ scale: 1.1 }}
-                            whileTap={{ opacity: 0.75 }}
+                            whileTap={{ scale:0.9, opacity: 0.75 }}
 
                             drag
                             dragElastic={dragVariant.dragElastic}
