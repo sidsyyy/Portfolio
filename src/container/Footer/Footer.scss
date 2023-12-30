@@ -44,18 +44,9 @@
         margin: 1rem 0;
         padding: 1rem;
 
-        border-radius: var(--border-radius);
-        border-style: var(--border-style);
-        border-color: var(--white-color);
-        border-width: var(--border-width);
+        border-color: var(--lightGray-color);
 
         cursor: pointer;
-
-        background: url(../../assets/bg39.jpg);
-        background-size: contain;
-        background-repeat: repeat;
-        background-position: center;
-
 
         img {
             width: 40px;
@@ -73,7 +64,7 @@
         }
 
         &:hover {
-            box-shadow: var(--box-shadow-h);
+            background: var(--background-darken);
         }
 
         @media screen and (max-width: 450px) {
@@ -92,20 +83,13 @@
     margin: 1rem 2rem;
     padding: 1rem 0 1rem 0;
 
-    border-style: var(--border-style);
-    border-radius: var(--border-radius);
-    border-color: var(--white-color);
-    border-width: var(--border-width);
-
 
     box-shadow: var(--box-shadow);
-    background: url(../../assets/bg39.jpg);
-    background-size: contain;
-    background-repeat: repeat;
-    background-position: center;
+    
+    border-color: var(--lightGray-color) !important;
 
     &:hover {
-        box-shadow: var(--box-shadow-h);
+        background: var(--background-darken);
     }
 
     div {
@@ -115,21 +99,18 @@
 
         transition: all 0.3s ease-in-out;
 
-        border-radius: var(--border-radius);
-        border-style: var(--border-style);
-        border-color: var(--white-color);
-        border-width: var(--border-width);
-
         box-shadow: var(--box-shadow);
-        background: var(--box-background);
+        background: var(--background-darken);
+        border-color: var(--lightGray-color) !important;
 
         input,
         textarea {
             width: 100%;
             padding: 0.95rem;
-            border: none;
-            border-radius: 7px;
-            background: var(--box-background);
+
+            color:var(--black-color);
+
+            background: var(--white-color);
             font-family: var(--font-base);
             outline: none;
         }
@@ -141,24 +122,26 @@
 
         input::placeholder,
         textarea::placeholder {
-            color: var(--white-color);
+            color: var(--black-color);
         }
 
     }
 
     button {
         padding: 1rem 2rem;
-        border-radius: 10px;
-        border: none;
+
         background-color: var(--white-color);
+        box-shadow: var(--box-shadow);
+        border-color: var(--white-color) !important;
 
         font-weight: 500;
         color: var(--black-color);
-        outline: none;
+
         margin: 2rem 0 2rem 0;
         font-family: var(--font-base);
 
         transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+
         cursor: pointer;
 
         &:disabled {
@@ -167,7 +150,8 @@
 
         &:hover {
             background-color: var(--blue-color);
-            color: var(--white-color);
+            border-color:var(--blue-color) !important;
+            color:var(--dark-blue-color);
         }
     }
 

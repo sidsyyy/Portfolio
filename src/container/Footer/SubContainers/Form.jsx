@@ -39,9 +39,9 @@ function Form() {
         <>
             {!isFormSubmitted ? (
 
-                <div className="app__footer-form app__flex">
-                    <div className="app__flex">
-                        <input className="p-text"
+                <div className="app__footer-form app__flex curvy-border">
+                    <div className="app__flex curvy-border">
+                        <input className="p-text curvy-border"
                             type="text"
                             placeholder="Your Name"
                             name="name"
@@ -49,8 +49,8 @@ function Form() {
                             onChange={handleChangeInput} />
                     </div>
 
-                    <div className="app__flex">
-                        <input className="p-text"
+                    <div className="app__flex curvy-border">
+                        <input className="p-text curvy-border"
                             type="email"
                             placeholder="Your Email"
                             name="email"
@@ -58,9 +58,9 @@ function Form() {
                             onChange={handleChangeInput} />
                     </div>
 
-                    <div className='app__flex'>
+                    <div className='app__flex curvy-border'>
                         <textarea
-                            className="p-text"
+                            className="p-text curvy-border"
                             placeholder="Your Message..."
                             value={formData.message}
                             name="message"
@@ -68,7 +68,15 @@ function Form() {
                         />
                     </div>
 
-                    <button disabled={loading} type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
+                    <button 
+                        disabled={loading} 
+                        type="button" 
+                        className="p-text curvy-border" 
+                        onClick={handleSubmit}
+                    >
+                        {!loading ? 'Send Message' : 'Sending...'}
+                    </button>
+                    
                 </div>
             ) : (
                 <div className='app__footer-form'>
