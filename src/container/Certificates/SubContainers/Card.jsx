@@ -6,7 +6,7 @@ import moment from 'moment';
 
 function Card(props) {
     return (
-        <div className="app__certificates-item app__flex">
+        <div className="app__certificates-item app__flex curvy-border">
             <div className="app__certificates-content">
 
                 <h1 className='bold-text'>{props.id + 1} / {props.items.length} </h1>
@@ -21,7 +21,10 @@ function Card(props) {
 
             </div>
 
-            <img src={urlFor(props.items[props.id].imgurl)} alt={props.items[props.id].name} />
+            <img 
+                src={urlFor(props.items[props.id].imgurl)} 
+                alt={props.items[props.id].name} 
+            />
 
         </div>
     );
