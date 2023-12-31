@@ -8,7 +8,9 @@ function ProjectCard(props) {
         <div
             className="app__card app__flex curvy-border"
         >
-            <img onClick={()=> {
+            <img 
+                className='curvy-border'
+                onClick={()=> {
                     if(props.item.codeLink) window.open(props.item.codeLink);
                     else if(props.item.projectLink) window.open(props.item.projectLink);
                 }} 

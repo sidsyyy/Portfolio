@@ -267,6 +267,8 @@
     flex-direction: column;
     margin: 2rem;
     padding: 0.5rem;
+
+    border-color: var(--lightGray-color) !important;
     
 
     h2,
@@ -287,14 +289,12 @@
         width: 90%;
         height: 170px;
         margin-top: 10px;
-
-        border: 4px var(--border-style) var(--secondary-color);
-        border-radius: var(--border-radius);
+        
+        border-color:transparent;
         object-fit: fill;
     }
 
     &:hover {
-        box-shadow: var(--box-shadow);
         background: var(--box-background);
     }
 

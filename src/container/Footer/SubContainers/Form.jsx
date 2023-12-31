@@ -86,7 +86,7 @@ function Form() {
                     
                 </div>
             ) : (
-                <div className='app__footer-form'>
+                <div className='app__footer-form curvy-border'>
                     <h2 className="head-text">
                         Thank you for getting in touch!
                     </h2>

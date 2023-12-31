@@ -80,12 +80,12 @@
 .app__footer-form {
     width: 60%;
     flex-direction: column;
-    margin: 1rem 2rem;
+    margin: 1rem 2rem 5rem 2rem;
     padding: 1rem 0 1rem 0;
 
 
     box-shadow: var(--box-shadow);
-    
+
     border-color: var(--lightGray-color) !important;
 
     &:hover {
@@ -100,27 +100,28 @@
         transition: all 0.3s ease-in-out;
 
         box-shadow: var(--box-shadow);
-        background: transparent;
-        border-color: var(--secondary-color) !important;
+        background: var(--black-color);
+        border-color: var(--lightGray-color) !important;
 
         input,
         textarea {
             width: 100%;
             padding: 0.95rem;
 
-            color:var(--white-color);
+            color: var(--secondary-color);
 
             background: transparent;
             border-color: transparent;
 
             font-family: var(--font-base);
+            font-size: large;
+
             outline: none;
         }
 
         textarea {
             resize: none;
             height: 170px;
-            
         }
 
         input::placeholder,
@@ -131,12 +132,12 @@
 
         input:-webkit-autofill,
         input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill {
-    background-color: transparent !important;
-    border-color:transparent !important;
-}
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill {
+            background-color: transparent !important;
+            border-color: transparent !important;
+        }
     }
 
     button {
@@ -162,8 +163,8 @@ select:-webkit-autofill {
 
         &:hover {
             background-color: var(--blue-color);
-            border-color:var(--blue-color) !important;
-            color:var(--dark-blue-color);
+            border-color: var(--blue-color) !important;
+            color: var(--dark-blue-color);
         }
     }
 

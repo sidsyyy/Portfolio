@@ -9,7 +9,7 @@ function Card(props) {
             whileInView={{ opacity: 1 }}
             className="app__card curvy-border"
         >
-            <img src={urlFor(props.item.imgUrl)} alt={props.item.title} />
+            <img className='curvy-border' src={urlFor(props.item.imgUrl)} alt={props.item.title} />
 
             <h2 className='bold-text head-text-decoration' style={{ marginTop: 20 }}>{props.item.title}</h2>
 
