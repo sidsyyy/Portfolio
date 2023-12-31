@@ -18,6 +18,7 @@ const Navbar = () => {
         await client
             .fetch(query)
             .then((data) => {
+                console.log(data);
                 setUrl(data.firstAssetURL);
             })
             .catch((err) => { console.log(err) });

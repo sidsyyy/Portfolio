@@ -52,6 +52,7 @@ const Work = () => {
             {/* Project Tags */}
             <Labels 
                 tag={activeProjectsTag}
+                items={projects}
                 onClick={handleProjectFilter}
             />
 

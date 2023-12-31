@@ -48,6 +48,7 @@ const Certificates = () => {
             <Labels
                 onClick={handleFilter}
                 activeTag={activeTag}
+                items={filteredCertificates}
             />
 
             {/* Certificate Card and Buttons to Navigate them. */}
