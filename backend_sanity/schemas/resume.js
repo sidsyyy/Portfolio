@@ -1,8 +1,8 @@
 // import Rule  from "@sanity/validation";
 
 export default {
-    title: 'Resume',
     name: 'allResume',
+    title: 'Resume',
     type: 'document',
     fields: [
         {

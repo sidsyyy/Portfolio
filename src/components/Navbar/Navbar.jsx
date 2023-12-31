@@ -3,7 +3,7 @@ import './Navbar.scss';
 import { images } from '../../constants';
 import { HiMenu, HiX } from 'react-icons/hi'
 import { motion } from 'framer-motion';
-import { client } from '../../client';
+import { client, urlFor } from '../../client';
 import { BsGithub, BsInstagram, BsLinkedin } from 'react-icons/bs';
 
 
@@ -13,12 +13,12 @@ const Navbar = () => {
     const [enableSidebar, setEnableSideBar] = useState(false);
 
     async function getResumeURL() {
-        const query = `*[_type == 'resume'][0] {"firstAssetURL": resume.asset->url}`;
+        const query = `*[_type == 'allResume'][0] {"firstAssetURL": resume.asset->url}`;
 
         await client
             .fetch(query)
             .then((data) => {
-                console.log(data);
+                console.log(data.firstAssetURL);
                 setUrl(data.firstAssetURL);
             })
             .catch((err) => { console.log(err) });
