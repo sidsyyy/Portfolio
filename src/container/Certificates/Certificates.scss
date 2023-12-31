@@ -231,6 +231,18 @@
             cursor: pointer;
         }
     }
+
+    @media screen and (max-width: 850px){
+        min-height:150px;
+        .next, .prev {
+            width:20px;
+            height:20px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        min-height:120px;
+    }
 }
 
 .next,
