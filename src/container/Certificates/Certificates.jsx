@@ -9,6 +9,24 @@ const Certificates = () => {
     const [certificates, setCertificates] = useState([]);
     const [filteredCertificates, setFilteredCertificate] = useState([]);
     const [activeTag, setActiveTag] = useState('All');
+    const [tagsCountArray, setTagCountsArray] = useState([]);
+    const tagsArray = ["Unity", "Cyber Security", "Programming", "Internship", "Other", "All"];
+
+    async function countTags(data) {
+        const temp = [];
+
+        for (const tag of tagsArray) {
+            let cnt = 0;
+
+            for (const item of data) {
+                if (item.tags.includes(tag)) cnt++;
+            }
+            
+            temp.push(cnt);
+        }
+
+        await setTagCountsArray(temp);
+    }
 
 
     // Fetching Result from the backend.
@@ -20,6 +38,8 @@ const Certificates = () => {
             .then((data) => {
                 setCertificates(data);
                 setFilteredCertificate(data);
+
+                countTags(data);
             })
             .catch((err) => { console.log(err.message); });
     }, []);
@@ -48,7 +68,8 @@ const Certificates = () => {
             <Labels
                 onClick={handleFilter}
                 activeTag={activeTag}
-                items={filteredCertificates}
+                tags={tagsArray}
+                tagsCount={tagsCountArray}
             />
 
             {/* Certificate Card and Buttons to Navigate them. */}

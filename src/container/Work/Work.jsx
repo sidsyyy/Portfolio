@@ -11,6 +11,25 @@ const Work = () => {
     const [activeProjects, setActiveProjects] = useState([]);
     const [activeProjectsTag, setActiveProjectsTag] = useState('All');
     const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+    const [tagsCountArray, setTagsCountArray] = useState([]);
+    const tagsArray = ['Unity', 'Flutter', 'React', 'Other', 'All'];
+
+    async function countTags(data) {
+        let temp = [];
+
+        for (const tag of tagsArray) {
+            let cnt = 0;
+
+            for (const item of data) {
+                if (item.tags.includes(tag)) cnt++;
+            }
+
+            console.log(tag + " " + cnt);
+            temp.push(cnt);
+        }
+
+        await setTagsCountArray(temp);
+    }
 
 
     useEffect(() => {
@@ -21,6 +40,8 @@ const Work = () => {
             .then((data) => {
                 setProjects(data);
                 setActiveProjects(data);
+
+                countTags(data);
             })
             .catch((err) => { console.log(err.message); });
     }, []);
@@ -51,9 +72,10 @@ const Work = () => {
 
             {/* Project Tags */}
             <Labels 
-                tag={activeProjectsTag}
-                items={projects}
                 onClick={handleProjectFilter}
+                tag={activeProjectsTag}
+                tags={tagsArray}
+                tagsCount={tagsCountArray}
             />
 
 
