@@ -1,23 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './Certificates.scss';
-import { motion } from 'framer-motion';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import Labels from './SubContainers/Labels';
 import Card from './SubContainers/Card';
 
 const Certificates = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
     const [certificates, setCertificates] = useState([]);
     const [filteredCertificates, setFilteredCertificate] = useState([]);
     const [activeTag, setActiveTag] = useState('All');
-
-
-    // Setting Current Index of item.
-    const handleClick = async (index) => {
-        setCurrentIndex(index);
-    };
 
 
     // Fetching Result from the backend.
@@ -37,7 +28,6 @@ const Certificates = () => {
     // Filter Items Based on tag passed as an argument.
     const handleFilter = async (tag) => {
         setActiveTag(tag);
-        setCurrentIndex(0);
 
         if (tag === 'All') {
             await setFilteredCertificate(certificates);
@@ -62,26 +52,9 @@ const Certificates = () => {
 
             {/* Certificate Card and Buttons to Navigate them. */}
             {filteredCertificates.length && (
-                <>
-                    {/* Certificate Card */}
-                    <Card
-                        id={currentIndex}
-                        items={filteredCertificates}
-                    />
-
-                    {/* Left Right Buttons */}
-                    <div className="app__certificates-btns app__flex">
-
-                        <div className="app__flex" onClick={() => handleClick(currentIndex === 0 ? filteredCertificates.length - 1 : currentIndex - 1)}>
-                            <HiChevronLeft />
-                        </div>
-
-                        <div className="app__flex" onClick={() => handleClick(currentIndex === filteredCertificates.length - 1 ? 0 : currentIndex + 1)}>
-                            <HiChevronRight />
-                        </div>
-
-                    </div>
-                </>
+                <Card
+                    items={filteredCertificates}
+                />
             )}
         </>
     )
