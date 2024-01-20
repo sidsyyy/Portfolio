@@ -35,7 +35,7 @@ const Navbar = () => {
 
             <div className='app__navbar-logo'>
                 <a href='#home' >
-                    <img src={images.logo} alt="logo" />
+                    <img style={{mixBlendMode:'multiply'}} src={images.logo} alt="logo" />
                 </a>
             </div>
 
@@ -75,19 +75,19 @@ const Navbar = () => {
                                 whileInView={{ opacity: (toggle ? [0, 1] : 0) }}
                                 transition={{ duration: 1, ease: 'easeOut' }}
                             >
-                                <a href="https://www.instagram.com/mathe_magician_/"
+                                <a href="https://www.instagram.com/sidsyyy/"
                                     target="_blank"
                                     rel='noreferrer'>
                                     <BsInstagram />
                                 </a>
 
-                                <a href="https://github.com/Code-Magician"
+                                <a href="https://github.com/sidsyyy"
                                     target="_blank"
                                     rel='noreferrer'>
                                     <BsGithub />
                                 </a>
 
-                                <a href="https://www.linkedin.com/in/priyansh-singh-31a7391b4/"
+                                <a href="http://www.linkedin.com/in/sidsyyy"
                                     target="_blank"
                                     rel='noreferrer'>
                                     <BsLinkedin />

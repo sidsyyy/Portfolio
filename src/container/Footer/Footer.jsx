@@ -28,18 +28,18 @@ const Footer = () => {
                 <div className="app__footer-card  curvy-border">
                     <img src={images.email} alt="email" />
                     <a 
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=priyanshkumar001@gmail.com" 
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=siddharths.singhs@gmail.com" 
                         target='_blank'
                         rel="noreferrer"
                         className="p-text"
                     >
-                        priyanshkumar001@gmail.com
+                        siddharths.singhs@gmail.com
                     </a>
                 </div>
 
                 <div className="app__footer-card curvy-border">
                     <img src={images.mobile} alt="phone" />
-                    <a href="tel:+91 7906482970" className="p-text">+91 7906482970</a>
+                    <a href="tel:+91 7906482970" className="p-text">+91 8808803655</a>
                 </div>
 
             </div>

@@ -23,7 +23,7 @@ import about02 from "../assets/about02.png";
 import about03 from "../assets/about03.png";
 import about04 from "../assets/about04.png";
 
-import profile from "../assets/profile.png";
+import profile from "../assets/Profile.png";
 import circle from "../assets/circle.png";
 import logo from "../assets/P-logo.png";
 
@@ -34,6 +34,10 @@ import bolt from "../assets/bolt.png";
 import nb from "../assets/nb.png";
 import skype from "../assets/skype.png";
 import spotify from "../assets/spotify.png";
+
+import android from '../assets/android.jpeg';
+import jetpackcompose from '../assets/jetpackcompose.jpeg';
+import firebase from '../assets/firebase.jpeg';
 
 const images = {
     email,
@@ -69,6 +73,9 @@ const images = {
     nb,
     skype,
     spotify,
+    android,
+    jetpackcompose,
+    firebase
   };
   
 

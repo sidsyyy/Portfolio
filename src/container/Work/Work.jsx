@@ -12,7 +12,7 @@ const Work = () => {
     const [activeProjectsTag, setActiveProjectsTag] = useState('All');
     const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
     const [tagsCountArray, setTagsCountArray] = useState([]);
-    const tagsArray = ['Unity', 'Flutter', 'React', 'Other', 'All'];
+    const tagsArray = ['Android', 'Other', 'All'];
 
     async function countTags(data) {
         let temp = [];

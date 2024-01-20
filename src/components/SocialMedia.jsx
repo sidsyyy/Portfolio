@@ -6,7 +6,7 @@ const SocialMedia = () => {
         <div className='app__social'>
 
             <div>
-                <a href="https://www.linkedin.com/in/priyansh-singh-31a7391b4/"
+                <a href="http://www.linkedin.com/in/sidsyyy"
                     target="_blank"
                     rel='noreferrer'>
                     <BsLinkedin />
@@ -14,7 +14,7 @@ const SocialMedia = () => {
             </div>
 
             <div>
-                <a href="https://github.com/Code-Magician"
+                <a href="https://github.com/sidsyyy"
                     target="_blank"
                     rel='noreferrer'>
                     <BsGithub />
@@ -22,7 +22,7 @@ const SocialMedia = () => {
             </div>
 
             <div>
-                <a href="https://www.instagram.com/mathe_magician_/"
+                <a href="https://www.instagram.com/sidsyyy/"
                     target="_blank"
                     rel='noreferrer'>
                     <BsInstagram />

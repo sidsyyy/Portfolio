@@ -59,7 +59,7 @@ const Header = () => {
                             <p className='p-text'>
                                 Hi There, my name is
                             </p>
-                            <h1 className='head-text'>Priyansh Singh</h1>
+                            <h1 className='head-text'>Siddarth Singh</h1>
                         </div>
 
                     </motion.div>
@@ -75,9 +75,9 @@ const Header = () => {
                         dragSnapToOrigin={dragVariant.dragSnapToOrigin}
                     >
 
-                        <p className='p-text'>I do Competitive Programming</p>
-                        <p className='p-text'>and Develop</p>
-                        <p className='p-text'>Games, Apps and Websites</p>
+                        <p className='p-text'>I do Android Development</p>
+                        <p className='p-text'>and</p>
+                        <p className='p-text'>Learning Jetpack Compose for the Future of android.</p>
 
                     </motion.div>
 
@@ -115,7 +115,7 @@ const Header = () => {
                 className="app__header-circles"
             >
 
-                {[images.flutter, images.Unity, images.react].map(
+                {[images.android, images.jetpackcompose, images.firebase].map(
                     (logo, index) => (
 
                         <motion.div
@@ -132,7 +132,7 @@ const Header = () => {
                             key={`circle-${index}`}
                         >
 
-                            <img draggable={false} src={logo} alt="circle" />
+                            <img style={{mixBlendMode:'multiply'}} draggable={false} src={logo} alt="circle" />
 
                         </motion.div>
                     )

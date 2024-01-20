@@ -10,7 +10,7 @@ const Certificates = () => {
     const [filteredCertificates, setFilteredCertificate] = useState([]);
     const [activeTag, setActiveTag] = useState('All');
     const [tagsCountArray, setTagCountsArray] = useState([]);
-    const tagsArray = ["Unity", "Cyber Security", "Programming", "Internship", "Other", "All"];
+    const tagsArray = ["Android", "Programming", "Internship", "Other", "All"];
 
     async function countTags(data) {
         const temp = [];
